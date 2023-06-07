@@ -1,0 +1,36 @@
+nb-layout-header {
+  display: flex;
+  justify-content: space-between;
+  font-size: larger;
+  font-weight: bold;
+}
+#he1 {
+  font-size: 20px;
+  color: cornflowerblue;
+}
+nb-card-header {
+  font-size: 20px;
+  color: cornflowerblue;
+}
+#lh{
+  font-size: 20px;
+  text-align: center;
+  color: cornflowerblue;
+}
+nb-layout-header{
+    color: cornflowerblue;
+}
+#mi2 {
+  margin-left: 1100px;
+}
+mat-icon {
+  color: cornflowerblue;
+}
+nb-icon {
+  margin-left: 1100px;
+}
+#p1 {
+  font-size: 15px;
+  color: cornflowerblue;
+  font-weight: bold;
+}

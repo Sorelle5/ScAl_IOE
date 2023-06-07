@@ -1,0 +1,54 @@
+mat-card {
+    background-color :lightskyblue, 
+}
+label{
+    color : cornflowerblue;
+    font-size:medium;
+}
+#l1 {
+  font-family: Verdana;
+  font-weight: bold;
+  color: cornflowerblue;
+  font-size: 15px;
+  text-align: center;
+}
+#l2 {
+  font-family: Verdana;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+#l3 {
+  font-family: Verdana;
+  font-weight: bold;
+  color:black;
+  font-size: 12px;
+  text-align: center;
+}
+h1{
+    font-family:Verdana;
+    font-weight:bold;
+    color:cornflowerblue;
+    font-size: 100px;
+    text-align:center;
+}
+#lc1{
+    height:200px;
+}
+#cb1 {
+  height: 200px;
+}
+button {
+  text-align: center;
+}
+input {
+  margin-left: 5px;
+}
+label {
+  font-family: Verdana;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}

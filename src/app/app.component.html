@@ -1,0 +1,72 @@
+
+<nb-layout>
+  <nb-layout-header fixed></nb-layout-header>
+  <nb-layout-column class="colored-column-basic">
+    <!--<nb-layout>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <nb-layout-header fixed>
+  {{title}}
+  </nb-layout-header>
+
+  <nb-layout-column>
+    <div>-->
+    <router-outlet></router-outlet>
+    <!--</div>
+    </nb-layout-column>
+
+    <nb-layout-footer fixed>
+    &lt;!&ndash; Insert footer here &ndash;&gt;
+    </nb-layout-footer>
+
+  </nb-layout>-->
+  </nb-layout-column>
+  <nb-layout-footer fixed>
+  <nb-card>
+    <nb-card-body>
+
+      <nb-tabset fullWidth>
+        <nb-tab tabTitle="FAQ">
+          <nb-accordion multi>
+            <nb-accordion-item>
+              <nb-accordion-item-header>
+                <p><strong>QUI SOMMES NOUS ?</strong>.</p>
+              </nb-accordion-item-header>
+              <nb-accordion-item-body>
+                Nous sommes des etudiants en master miage à l'université de Toulouse 3 Paul Sabatier'
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+
+            <nb-accordion-item>
+              <nb-accordion-item-header>
+                <p><strong>QUEL EST LE ROLE DE L'APP ?</strong>.</p>
+              </nb-accordion-item-header>
+              <nb-accordion-item-body>
+                Le site permet de scanner l'étique de vos produit alimentaires afin de déterminer son origine et son impact environementale.
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+
+            <nb-accordion-item>
+              <nb-accordion-item-header>
+                <p><strong>PEUT-ON SCANNER L'ESTAMPILLE ?</strong>.</p>
+              </nb-accordion-item-header>
+              <nb-accordion-item-body>
+                Non pour le moment mais c'est une mise à jour qui arrive bientôt.
+              </nb-accordion-item-body>
+            </nb-accordion-item>
+          </nb-accordion>
+            
+        </nb-tab>
+        <nb-tab tabTitle="CONTACT US">
+          <mat-icon>contact_support</mat-icon>
+          <p> <strong> A venir</strong>.</p> <br>
+
+          <p> <strong> <mat-icon>copyright</mat-icon></strong>.</p>
+        </nb-tab>
+      </nb-tabset>
+
+    </nb-card-body>
+  </nb-card>
+  
+  </nb-layout-footer>
+
+</nb-layout>

@@ -1,0 +1,44 @@
+label
+{
+  font-family: Verdana;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+input{
+    margin-left : 5px;
+}
+#l1 {
+  font-family: Verdana;
+  font-weight: bold;
+  color: cornflowerblue;
+  font-size: 15px;
+  text-align: center;
+}
+
+#l2 {
+  font-family: Verdana;
+  font-weight: bold;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+#cb1 {
+  height: 200px;
+}
+#b1 {
+    margin-right: 50px;
+}
+mat-icon {
+  color: cornflowerblue;
+}
+
+#mi1 {
+  margin-right: 760px;
+}
+#l {
+  text-align: center;
+  font-size: 14px;
+}
+

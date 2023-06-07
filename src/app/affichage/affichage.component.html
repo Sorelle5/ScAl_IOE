@@ -1,0 +1,128 @@
+<nb-layout>
+  <button nbButton outline status="Primary" routerLink="/home">Retour</button>
+  <nb-layout-header id="lh">
+    Informations du produit         <mat-icon id="mi2" routerLink="/home">home</mat-icon>
+  </nb-layout-header>
+
+  <nb-layout-column class="colored-column-basic" *ngIf="product; else elseBlock">
+    <nb-accordion multi>
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          A PROPOS DU PRODUIT 
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card accent="info">
+            <nb-card-header id="he1">{{product.product_name_fr}} <br />  <br /> <img src={{product.image_front_url}} /></nb-card-header>
+            <nb-card-body>
+              <p><strong>Description :</strong> {{product.generic_name_fr}}  </p>
+              <p><strong>Origine :</strong> {{product.origins}} </p>
+              <p><strong>Code-barres :</strong> {{scannedCode}}</p>
+              <p><strong>Marque :</strong> {{product.brands_imported}}</p>
+              <p><strong>Marque d'origine :</strong> {{product.brands}}</p>
+              <p><strong>Quantité :</strong> {{product.quantity}}</p>
+              <p><strong>{{lp}}</strong>{{dep_com}}</p>
+
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          SANTE ET NUTRITION
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card accent="info">
+            <nb-card-header id="he2">Santé et Nuttrition</nb-card-header>
+            <nb-card-body>
+              <p><strong> <mat-icon>date_range</mat-icon> Date d'expiration :</strong> {{product.expiration_date}} </p>
+              <p><strong>Conditions de conservation :</strong> {{product.conservation_conditions_fr}} </p>
+              <p><strong>Catégorie :</strong> {{product.categories}} </p>
+              <p><strong> <mat-icon>report_problem</mat-icon> Allergenes :</strong>  {{product.allergens_imported}}</p>
+              <p><strong>Ingrédients :</strong> {{product.ingredients_text_fr}} </p>
+              <p id="p1"><strong> <mat-icon> restaurant_menu</mat-icon> Nuttriments pour 100g: :</strong>  </p>
+              <p><strong>Calcium :</strong> {{product.nutriments.calcium_100g}} </p>
+              <p><strong> Energy en Kcal  :</strong> {{product.nutriments["energy-kcal_100g"]}} </p>
+              <p><strong>Energy en Kj :</strong> {{product.nutriments["energy-kj_100g"]}} </p>
+              <p><strong>Graisse en g :</strong> {{product.nutriments.fat_100g}} </p>
+              <p><strong>Fibre en g  :</strong> {{product.nutriments.fiber_100g}} </p>
+              <p><strong>Protéine en g :</strong> {{product.nutriments.proteins_100g}} </p>
+              <p><strong>Sel en g  :</strong> {{product.nutriments.salt_100g}} </p>
+              <p><strong>Sucre en g :</strong> {{product.nutriments.sugars_100g}} </p>
+              <p><strong>Vitamine B2  :</strong> {{product.nutriments["vitamin-b2_100g"]}} </p>
+              <p><strong>Vitamine D :</strong> {{product.nutriments["vitamin-d_100g"]}} </p>
+
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          CHEMINEMENT ET EMPILEMENT DE PROPRIETES
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card accent="info">
+            <nb-card-header>Cheminement et Empilement de propriétés</nb-card-header>
+
+            <nb-card-body>
+              <p><strong>Pays d'origine ingrédients :</strong></p>
+              <nb-card accent="info">
+                <nb-card-body class="example-items-col">
+                  <nb-tag-list>
+                    <nb-tag appearance="outline" *ngFor="let country of product.countries.split(',')" [text]="country"
+                            status="primary"></nb-tag>
+                  </nb-tag-list>
+                </nb-card-body>
+              </nb-card>
+              <p><strong>Lieux de ventes :</strong> {{product.stores}}</p>
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+      <nb-accordion-item>
+        <nb-accordion-item-header>
+          ENVIRONEMENT
+        </nb-accordion-item-header>
+        <nb-accordion-item-body>
+          <nb-card accent="info">
+            <nb-card-header> Environement</nb-card-header>
+
+            <nb-card-body>
+              <p><strong> Empreinte carbon :</strong> {{product.ecoscore_data.agribalyse.co2_total}} kg CO2 eq/kg</p>
+              <p><strong>Propriétaire :</strong> {{product.owner_imported}} </p>
+              <p><strong>Packaging :</strong> {{product.packaging_text_fr}}</p>
+              <p><strong> Packaging importé  :</strong> {{product.packaging_imported}} </p>
+              <p><strong>  Pays d'importation :</strong> {{product.countries_imported}} </p>
+              <p><strong>Type de fabrication:</strong> Industrielle </p>
+
+
+
+            </nb-card-body>
+          </nb-card>
+        </nb-accordion-item-body>
+      </nb-accordion-item>
+
+    </nb-accordion>
+
+  </nb-layout-column>
+
+
+
+</nb-layout>
+
+<ng-template #elseBlock>
+  <nb-layout-column>
+    <nb-card status="danger">
+      <nb-card-header>Oups!</nb-card-header>
+      <nb-card-body>
+        Aucun produit trouvé!
+      </nb-card-body>
+      <nb-card-footer>
+        <button nbButton outline status="primary" routerLink="/scan">Retour</button>&nbsp;
+      </nb-card-footer>
+    </nb-card>
+  </nb-layout-column>
+</ng-template>

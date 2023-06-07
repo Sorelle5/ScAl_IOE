@@ -1,0 +1,66 @@
+<nb-layout center>
+
+  <nb-layout-column class="colored-column-basic">
+    <nb-card>
+      <nb-card-header>
+        <label id="l">Placez votre caméra devant l'étiquette du produit pour lancer la scan</label>
+      </nb-card-header>
+      <nb-card-body>
+        <ngx-barcode-scanner [(value)]="barcode"
+                             [codes]="['code_128', 'ean', 'upc', 'upc_e', 'ean_8']" (exception)="onError($event)">
+        </ngx-barcode-scanner>
+        <br> <br>
+        <label>Ou alors , entrez manuellement le code barre de votre produit </label>
+        <br><br><label> Code Barre : </label>  <input type="text" nbInput fullWidth fieldSize="giant" placeholder="giant" [(ngModel)]="barcode"> <br> <br>
+        <nb-card-body id="cb1">
+          <nb-layout id="layout1">
+            <nb-layout-header>
+              <label id="l2">Si vous avez une estampille sur l'étiquette de votre produit , veuillez renseigner les informations qui figurent dessus.</label>
+            </nb-layout-header>
+            <nb-layout-column>
+
+              <nb-accordion multi>
+                <nb-accordion-item>
+                  <nb-accordion-item-header>
+                    ESTAMPILLE
+                  </nb-accordion-item-header>
+                  <nb-accordion-item-body>
+                    <nb-layout-column id="lc1" class="colored-column-warning">
+                       <br> <br>
+                      <div><img  alt="Card" src="https://tse2.mm.bing.net/th?id=OIP.uaOgJoLmRggDXH7WeE8bhAHaD_&pid=Api&P=0" [style]="{ width: '290px' , height: '250px'}" /></div>
+                    </nb-layout-column>
+                    <nb-layout-column class="colored-column-danger">
+                      <br><br>
+                      <nb-card>
+                        <nb-card-body class="example-items-col">
+                          <label> Département : </label>  <input type="number" nbInput fullWidth fieldSize="giant" placeholder="giant" [(ngModel)]="valDep"> <br> <br><br>
+                          <label>  Commune : </label>     <input type="number" nbInput fullWidth fieldSize="giant" placeholder="giant" [(ngModel)]="valCom"> <br><br><br>
+                          <label> Entreprise : </label>   <input type="number" nbInput fullWidth fieldSize="giant" placeholder="giant" [(ngModel)]="valEnt"> <br><br><br>
+                          <nb-checkbox (checkedChange)="toggle($event)">CE</nb-checkbox> <br>
+                          <label> Pays : </label>
+                          <mat-form-field>
+                            <mat-select>
+                              <mat-option>None</mat-option>
+                              <mat-option *ngFor="let state of states" [value]="state">{{state.code}}</mat-option>
+                            </mat-select>
+                          </mat-form-field>
+                        </nb-card-body>
+                      </nb-card>
+                    </nb-layout-column>
+                  </nb-accordion-item-body>
+                </nb-accordion-item>
+              </nb-accordion>
+            </nb-layout-column>
+
+          </nb-layout> <br>
+          <label id="l3">Utilisez notre scanner pour analyser les étiquettes de vos produits alimentaires et découvrir leur origine et leur empreinte carbone. </label>
+        </nb-card-body>
+      </nb-card-body>
+      <nb-card-footer>
+        <mat-icon id="mi1" (click)="onValiderButtonPress()">camera_enhance</mat-icon>
+        <mat-icon id="mi2" routerLink="/home">home</mat-icon>
+      </nb-card-footer>
+    </nb-card>
+  </nb-layout-column>
+</nb-layout>
+
